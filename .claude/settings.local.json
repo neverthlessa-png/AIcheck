@@ -1,0 +1,27 @@
+{
+  "$schema": "https://claude.ai/schema/settings.json"
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "permissions": {
+    "allow": [
+      "*",
+      "Write(*)",
+      "Read(*)",
+      "Edit(*)",
+      "Agent(*)",
+      "Glob(*)",
+      "Grep(*)",
+      "ToolSearch",
+      "Skill(*)",
+      "TaskCreate",
+      "NotebookEdit",
+      "SendMessage",
+      "RemoteTrigger",
+      "CronCreate",
+      "TeamCreate",
+      "Bash(*)"
+    ],
+    "permissionMode": "auto"
+  }
+}

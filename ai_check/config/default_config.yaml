@@ -1,0 +1,96 @@
+# AI Check 默认配置
+
+# 应用配置
+app:
+  name: "AI Check"
+  version: "0.1.0"
+  language: "zh_CN"
+
+# 硬件配置
+hardware:
+  auto_detect: true
+  device: "auto"  # auto, cpu, cuda
+  gpu_memory_limit: 0.8  # GPU内存使用上限
+
+# 检测配置
+detection:
+  batch_size: 32
+  image_size: 512  # 处理时的图片尺寸
+  confidence_threshold: 0.5
+
+  # 伪造检测
+  forgery:
+    enabled: true
+    ps_detector:
+      enabled: true
+      threshold: 0.6
+    ai_generated_detector:
+      enabled: true
+      threshold: 0.7
+    splice_detector:
+      enabled: true
+      threshold: 0.5
+    copy_move_detector:
+      enabled: true
+      threshold: 0.5
+
+  # 重复检测
+  duplicate:
+    enabled: true
+    hash_detector:
+      enabled: true
+      hash_type: "phash"  # phash, dhash, ahash
+    similarity_detector:
+      enabled: true
+      threshold: 0.9
+
+  # 文档检测
+  document:
+    enabled: true
+    ocr_analyzer:
+      enabled: true
+      lang: "ch"  # ch, en, ch_en
+    template_matcher:
+      enabled: true
+
+  # 内容检测
+  content:
+    enabled: true
+    ocr_extractor:
+      enabled: true
+      lang: "ch"
+
+# 存储配置
+storage:
+  database:
+    type: "sqlite"
+    path: "~/.ai_check/data/ai_check.db"
+  cache:
+    enabled: true
+    path: "~/.ai_check/cache"
+    max_size_mb: 1024
+  vector_index:
+    type: "faiss"
+    path: "~/.ai_check/data/faiss_index"
+    dimension: 512
+
+# 模型配置
+models:
+  path: "~/.ai_check/models"
+  auto_download: true
+  sources:
+    huggingface: "https://huggingface.co"
+    local: "./models"
+
+# 日志配置
+logging:
+  level: "INFO"
+  path: "~/.ai_check/logs"
+  max_size_mb: 100
+  backup_count: 5
+
+# GUI配置
+gui:
+  theme: "light"  # light, dark
+  window_size: [1280, 800]
+  recent_files_max: 10
