@@ -1,25 +1,102 @@
-# Dependencies
-node_modules/
+# ===========================
+# AI Check 项目 .gitignore
+# ===========================
+
+# ---------------------------
+# Python
+# ---------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+.Python
 venv/
 .venv/
-__pycache__/
-*.pyc
+env/
+*.egg-info/
+*.egg
+build/
+dist/
+*.spec
 
+# ---------------------------
 # IDE
-.vscode/
+# ---------------------------
 .idea/
+.vscode/
+*.iml
+*.code-workspace
 
-# Environment
+# ---------------------------
+# 环境和敏感配置
+# ---------------------------
 .env
 .env.local
+.env.*.local
+*.pem
+*.key
+credentials
 
-# Build outputs
-dist/
-build/
-
-# Logs
-*.log
-
-# OS
+# ---------------------------
+# 操作系统
+# ---------------------------
 .DS_Store
 Thumbs.db
+Desktop.ini
+._*
+
+# ---------------------------
+# 日志和数据库
+# ---------------------------
+*.log
+*.db
+*.sqlite
+*.sqlite3
+!tests/data/*.db
+
+# ---------------------------
+# 模型和大型文件
+# ---------------------------
+*.onnx
+*.pt
+*.pth
+*.bin
+*.h5
+models/
+!models/.gitkeep
+*.faiss
+
+# ---------------------------
+# 缓存
+# ---------------------------
+cache/
+*.cache
+*.tmp
+*.bak
+
+# ---------------------------
+# 测试
+# ---------------------------
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ---------------------------
+# 开发工具
+# ---------------------------
+.mypy_cache/
+.ruff_cache/
+
+# ---------------------------
+# 应用数据
+# ---------------------------
+data/
+!data/.gitkeep
+exports/
+results/
+tasks/
+
+# ---------------------------
+# Claude Code 本地设置
+# ---------------------------
+.claude/settings.local.json
