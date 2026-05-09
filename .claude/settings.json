@@ -23,5 +23,17 @@
       "Bash(*)"
     ],
     "permissionMode": "auto"
-  }
+  },
+  "hooks": {
+    "BeforeTask": [
+      {
+        "type": "prompt",
+        "prompt": "在开始任何开发任务前，必须先读取 DEVELOPMENT_LOG.md 文件了解最近的开发内容。"
+      }
+    ]
+  },
+  "alwaysRead": [
+    "DEVELOPMENT_LOG.md",
+    "docs/guides/development-log-guide.md"
+  ]
 }
